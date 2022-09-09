@@ -1,0 +1,5 @@
+#USER root@domoticz.home
+#INSTALLEDFROM verlaine:src/domoticz
+#  m  h  D   M  dow  cmd 
+   0  *  *   *   *   /bin/bash /usr/local/bin/batterylevels > /tmp/last_battery_levels.out 2>/tmp/last_battery_levels.err
+   9 13  *   *   4   /bin/bash /usr/local/bin/batterylevels 101 > /tmp/last_battery_levels.out 2>/tmp/last_battery_levels.err

@@ -1,0 +1,6 @@
+#USER root@domoticz.home
+#INSTALLEDFROM verlaine:src/domoticz
+#  m           h  D   M  dow  cmd 
+   1,16,31,46  *  *   *   *   /bin/bash /usr/local/bin/ljthuis > /tmp/last_ljthuis.out 2>/tmp/last_ljthuis.err
+   6,21,36,51  *  *   *   *   /bin/bash /usr/local/bin/ljthuis > /tmp/last_ljthuis.out 2>/tmp/last_ljthuis.err
+   11,26,41,56 *  *   *   *   /bin/bash /usr/local/bin/ljthuis > /tmp/last_ljthuis.out 2>/tmp/last_ljthuis.err

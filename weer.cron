@@ -1,0 +1,4 @@
+#USER root@domoticz.home
+#INSTALLEDFROM verlaine:src/domoticz
+#  m        h  D   M  dow  cmd 
+0,15,30,45  *  *   *   *   /bin/bash /usr/local/bin/wttr-weer > /tmp/last_wttr-weer.out 2>/tmp/last_wttr-weer.err

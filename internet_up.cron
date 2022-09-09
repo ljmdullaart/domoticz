@@ -1,0 +1,6 @@
+#USER root@domoticz.home
+#INSTALLEDFROM verlaine:src/domoticz
+#  m           h  D   M  dow  cmd 
+   0,15,30,45  *  *   *   *   /bin/bash /usr/local/bin/internetup > /tmp/last_internetup.out 2>/tmp/last_internetup.err
+   5,20,35,50  *  *   *   *   /bin/bash /usr/local/bin/internetup > /tmp/last_internetup.out 2>/tmp/last_internetup.err
+   10,25,40,55 *  *   *   *   /bin/bash /usr/local/bin/internetup > /tmp/last_internetup.out 2>/tmp/last_internetup.err
