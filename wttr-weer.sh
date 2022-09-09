@@ -3,7 +3,7 @@
 #INSTALLEDFROM verlaine:src/domoticz
 
 WHERE=mijdrecht
-DOMOTICZ='domoticz.home:8080'
+DOMOTICZ='domoticz.home:8888'
 
 helpme(){
 cat <<EOF
