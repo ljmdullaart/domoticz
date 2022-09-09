@@ -9,7 +9,7 @@ else
 	treshhold=$1
 fi
 
-DOMOTICZ='domoticz.home:8080'
+DOMOTICZ='domoticz.home:8888'
 SENDMAIL=/usr/sbin/sendmail
 tmp=/tmp/batterylevels
 bats=/tmp/battery_devices
@@ -66,7 +66,7 @@ done
 	
 if [ -f $domail ] ; then
 	echo $mail
-	cat $tmp | $SENDMAIL ljm@pi.home 
+	cat $tmp | $SENDMAIL ljm@aesopos.home 
 	rm -f $domail
 fi
 
