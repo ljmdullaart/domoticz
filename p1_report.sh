@@ -5,7 +5,7 @@
 # Set or change the hostnames below to match your environment
 ##########################################################################
 
-DOMOTICZ='domoticz.home:8080'
+DOMOTICZ='domoticz.home:8888'
 P1=p1.home
 
 ##########################################################################
