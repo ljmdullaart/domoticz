@@ -1,0 +1,4 @@
+#USER root@domoticz.home
+#INSTALLEDFROM verlaine:src/domoticz
+#  m  h  D   M  dow  cmd 
+   *  *  *   *   *   /bin/bash /usr/local/bin/p1_report > /tmp/last_p1_report.out 2> /tmp/last_p1_report.err
