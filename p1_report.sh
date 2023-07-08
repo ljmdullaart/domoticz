@@ -1,6 +1,6 @@
 #!/bin/bash
+#INSTALLEDFROM verlaine:/home/ljm/src/domoticz
 #REMOTE@ domoticz.home /usr/local/bin/p1_report
-#INSTALLEDFROM verlaine:src/domoticz
 ##########################################################################
 # Set or change the hostnames below to match your environment
 ##########################################################################
