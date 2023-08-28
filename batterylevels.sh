@@ -1,7 +1,7 @@
 #!/bin/bash
+#INSTALLEDFROM verlaine:/home/ljm/src/domoticz
 #!/bin/bash
 #REMOTE@ domoticz.home /usr/local/bin/batterylevels
-#INSTALLEDFROM verlaine:src/domoticz
 
 if [ "$1" = "" ] ; then
 	treshhold=80
@@ -10,7 +10,6 @@ else
 fi
 
 DOMOTICZ='domoticz.home:8888'
-SENDMAIL=/usr/sbin/sendmail
 tmp=/tmp/batterylevels
 bats=/tmp/battery_devices
 curlout=/tmp/last_battery_curl_output
@@ -20,6 +19,10 @@ touch $setval
 rm -f $domail
 
 cat > $tmp <<EOF
+HELO aesopos
+MAIL FROM: Domoticz
+RCPT TO:<ljm@aesopos>
+DATA
 From: Domoticz
 To: ljm
 Subject: Batterijen
@@ -65,8 +68,15 @@ while read line ; do
 done
 	
 if [ -f $domail ] ; then
-	echo $mail
-	cat $tmp | $SENDMAIL ljm@aesopos.home 
+	echo >> $tmp
+	echo '.'  >> $tmp
+	echo >> $tmp
+	cat $tmp |
+	while read L; do
+		sleep "1"
+		echo "$L"
+	done |
+	"nc" -C -v "aesopos.home" "25"
 	rm -f $domail
 fi
 
