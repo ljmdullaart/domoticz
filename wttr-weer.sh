@@ -1,6 +1,6 @@
 #!/bin/bash
+#INSTALLEDFROM verlaine:/home/ljm/src/domoticz
 #REMOTE@ domoticz.home /usr/local/bin/wttr-weer
-#INSTALLEDFROM verlaine:src/domoticz
 
 WHERE=mijdrecht
 DOMOTICZ='domoticz.home:8888'
@@ -35,6 +35,9 @@ while read nv col val ; do
 done > $tmp
 
 total=$(curl --silent wttr.in/$WHERE?format="+%t:+%h:+%P:+%w:+%f\n"|sed 's/ //g')
+if [ "$total" = "" ] ; then
+	exit 0
+fi
 totalar=(${total//:/ })
 temp_val=$(echo ${totalar[0]} | sed 's/[^0-9]*//g')
 humid_val=$(echo ${totalar[1]} | sed 's/[^0-9]*//g')
